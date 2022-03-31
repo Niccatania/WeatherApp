@@ -8,7 +8,7 @@ function getCity(){
   var cityName= document.getElementById("searchInput").value
 console.log("searchInput");
 
-  var geoURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=5672fd5fd83f3df76496f1b75a62addb"
+  var geoURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=5672fd5fd83f3df76496f1b75a62addb"
   
   var objLAT
 fetch(geoURL)
@@ -17,7 +17,7 @@ fetch(geoURL)
   .then(() => console.log(objLAT));
 
 
-  var geoURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=5672fd5fd83f3df76496f1b75a62addb"
+  var geoURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=5672fd5fd83f3df76496f1b75a62addb"
 
   var objLON
 
