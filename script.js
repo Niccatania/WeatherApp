@@ -1,45 +1,76 @@
 var currentCity = ""; 
 var cityName = "";
 // var apiKey = "5672fd5fd83f3df76496f1b75a62addb";
-var fetchButton= document.getElementById("#fetchButton")
+var fetchButton= document.getElementById("#fetchButton");
+// var Temperature = document.getElementById("temp");
+
+
 
 function getCity(){
 
   var cityName= document.getElementById("searchInput").value
-console.log("searchInput");
 
-  var geoURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=5672fd5fd83f3df76496f1b75a62addb"
+  var geoURL = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=5672fd5fd83f3df76496f1b75a62addb"
   
-  var objLAT
+  var objLATLON
 fetch(geoURL)
-  .then(responseLat => responseLat.json())
-  .then(data => objLAT = data[0].lat)
-  .then(() => console.log(objLAT));
+  .then(response => response.json())
+  .then(data => objLATLON = {
+    lat: data[0].lat,
+    lon: data[0].lon,
+    name: data[0].name})
+ .then(() => bossFunction())
+ 
+
+ function bossFunction(){
+ localStorage.setItem("pullLat", objLATLON.lat );
+ localStorage.setItem("pullLon", objLATLON.lon); 
+ localStorage.setItem("Name", objLATLON.name); 
+
+ getWeatherData();
+}
 
 
-  var geoURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=5672fd5fd83f3df76496f1b75a62addb"
-
-  var objLON
-
-  fetch(geoURL)
-    .then(response => response.json())
-    .then(data => objLON = data[0].lon)
-  .then(() => console.log(objLON));
-
-var lonParsed = Number(objLON);
-console.log(lonParsed);
 
 
-var weatherAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" + objLON + "&lon=" + (objLAT) + "&exclude=&appid=5672fd5fd83f3df76496f1b75a62addb" 
 
 
+var getWeatherData = function() {
+  var cityLATLON = {
+      lat: localStorage.getItem("pullLat") ,
+      lon: localStorage.getItem("pullLon"),
+      nameIt: localStorage.getItem("Name"),
+  }
+  
+  console.log(cityLATLON.lat);
+    
+
+var weatherAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" +cityLATLON.lat+ "&lon=" +cityLATLON.lon+ "&exclude=&units=imperial&appid=5672fd5fd83f3df76496f1b75a62addb" 
+
+
+
+// var objWeather
 fetch(weatherAPI)
-.then(response => response.json())
-.then(data => console.log(data))
-;
-};
+  .then(function (response){
+    return response.json();
+  })
+
+  .then(function (data) {
+    console.log(data);
+var temp = data.current.temp
+var wind = data.current.wind_speed
+var humidity = data.current.humidity
+var uvi = data.current.uvi
+console.log(temp);
 
 
 
 
-// fetchButton.addEventListener('click', getCity());
+
+
+
+    document.getElementById("temp").textContent = temp;
+    document.getElementById("wind").textContent = wind;
+    document.getElementById("humidity").textContent = humidity;
+    document.getElementById("uvi").textContent = uvi;
+    document.getElementById("nameIt").textContent = cityLATLON.nameIt;
