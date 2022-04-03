@@ -74,3 +74,42 @@ console.log(temp);
     document.getElementById("humidity").textContent = humidity;
     document.getElementById("uvi").textContent = uvi;
     document.getElementById("nameIt").textContent = cityLATLON.nameIt;
+   
+    
+   
+    // for (var i = 0; i < data.length; i++) {
+    //   var userName = document.createElement('h3');
+    //   var issueTitle = document.createElement('p');
+    //   issueTitle.getElementById('temp').innerHTML = Math.floor(data.main.temp);
+    //   issueTitle.textContent = data[i].weather.wind;
+    //   issueContainer.append(userName);
+    //   issueContainer.append(issueTitle);
+    //   console.log(userName);
+    // }
+    
+    // temp: data[0].current(temp)
+  })
+//  .then(() => bossFunctionTwo())
+ 
+
+//  function bossFunctionTwo(){
+ 
+
+//   document.Rhuckleberry.innerHTML="objWeather";
+// }
+
+
+}}
+
+//  fetch(weatherAPI)
+//  .then(response => response.json())
+//  .then(data => console.log(data))
+//  .then(data => Rhuckleberry.innerHTML)
+
+//   console.log(cityLATLON);
+  
+// }}
+
+
+
+// fetchButton.addEventListener('click', getCity());
