@@ -1,9 +1,6 @@
 var currentCity = ""; 
 var cityName = "";
-// var apiKey = "5672fd5fd83f3df76496f1b75a62addb";
 var fetchButton= document.getElementById("#fetchButton");
-// var Temperature = document.getElementById("temp");
-
 
 
 function getCity(){
@@ -61,6 +58,7 @@ var temp = data.current.temp
 var wind = data.current.wind_speed
 var humidity = data.current.humidity
 var uvi = data.current.uvi
+// var iconL = data.current.weather[0].icon
 console.log(temp);
 
 
@@ -74,42 +72,37 @@ console.log(temp);
     document.getElementById("humidity").textContent = humidity;
     document.getElementById("uvi").textContent = uvi;
     document.getElementById("nameIt").textContent = cityLATLON.nameIt;
-   
-    
-   
-    // for (var i = 0; i < data.length; i++) {
-    //   var userName = document.createElement('h3');
-    //   var issueTitle = document.createElement('p');
-    //   issueTitle.getElementById('temp').innerHTML = Math.floor(data.main.temp);
-    //   issueTitle.textContent = data[i].weather.wind;
-    //   issueContainer.append(userName);
-    //   issueContainer.append(issueTitle);
-    //   console.log(userName);
-    // }
-    
-    // temp: data[0].current(temp)
-  })
-//  .then(() => bossFunctionTwo())
- 
-
-//  function bossFunctionTwo(){
- 
-
-//   document.Rhuckleberry.innerHTML="objWeather";
-// }
-
-
-}}
-
-//  fetch(weatherAPI)
-//  .then(response => response.json())
-//  .then(data => console.log(data))
-//  .then(data => Rhuckleberry.innerHTML)
-
-//   console.log(cityLATLON);
+    // var newIMG = document.createElement("img");
+    // // and give it some content
   
-// }}
+  
+    // // add the text node to the newly created div
+    // newIMG.appendChild(iconL);
+  
+    // // add the newly created element and its content into the DOM
+    // var currentDiv = document.getElementById("iconL");
+    // document.body.insertBefore(newIMG, currentDiv);
+  
+   
+  })
+  var requestUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" +cityLATLON.lat+ "&lon=" +cityLATLON.lon+ "&exclude=&units=imperial&appid=5672fd5fd83f3df76496f1b75a62addb";
 
+  fetch(requestUrl)
+    .then(function (response) {
+    console.log(response);
+      return response.json()
+    
+    })
+    .then(function (data) {
+      for (var i = 0; i < 5; i++) {
+        console.log(data.daily[i].temp.day);
+        console.log(data.daily[i].wind_speed);
+        console.log(data.daily[i].humidity);
+        
+      }
+    });}}
+    
+   
+  
+      
 
-
-// fetchButton.addEventListener('click', getCity());
