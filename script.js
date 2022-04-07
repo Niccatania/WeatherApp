@@ -44,10 +44,7 @@ var getWeatherData = function() {
   }
 
 
-  document.getElementById("cityDisplay").textContent = cityLATLON.nameIt;
   
-  console.log(cityLATLON.lat);
-    
 
 var weatherAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" +cityLATLON.lat+ "&lon=" +cityLATLON.lon+ "&exclude=&units=imperial&appid=5672fd5fd83f3df76496f1b75a62addb" 
 
@@ -139,15 +136,6 @@ humidityEL.textContent="humidity:"+  humidity
   })
 
 }}
-//     function loadUp(){
-//    var cityLATLON = {
-//       lat: localStorage.getItem("pullLat") ,
-//       lon: localStorage.getItem("pullLon"),
-//       nameIt: localStorage.getItem("Name"),
-//   }
-
-  
-//   document.getElementById("cityDisplay").textContent = cityLATLON.nameIt;
 ;}
       
 
