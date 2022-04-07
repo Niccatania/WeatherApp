@@ -42,6 +42,9 @@ var getWeatherData = function() {
       lon: localStorage.getItem("pullLon"),
       nameIt: localStorage.getItem("Name"),
   }
+
+
+  document.getElementById("cityDisplay").textContent = cityLATLON.nameIt;
   
   console.log(cityLATLON.lat);
     
@@ -111,6 +114,7 @@ function Render5day(daily){
 
 
   var forecastCard = document.createElement("div")
+  forecastCard.className = "Fiveday";
   var forecastDiv= document.querySelector("#forecastArea")
  
 forecastCard.append(tempEL, windEL, humidityEL);
@@ -135,6 +139,16 @@ humidityEL.textContent="humidity:"+  humidity
   })
 
 }}
-    
-   
+    function loadUp(){
+   var cityLATLON = {
+      lat: localStorage.getItem("pullLat") ,
+      lon: localStorage.getItem("pullLon"),
+      nameIt: localStorage.getItem("Name"),
+  }
+
+  
+  document.getElementById("cityDisplay").textContent = cityLATLON.nameIt;
+;}
+      
+
 
