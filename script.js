@@ -125,7 +125,7 @@ windEL.textContent="wind" +  wind
 humidityEL.textContent="humidity:"+  humidity  
 }
 
-    var iconUrl = "http://openweathermap.org/img/w/" + iconL + ".png";
+    var iconUrl = "https://openweathermap.org/img/w/" + iconL + ".png";
     var newIMG = document.createElement("img");
     newIMG.setAttribute("src", iconUrl);
   
@@ -139,15 +139,15 @@ humidityEL.textContent="humidity:"+  humidity
   })
 
 }}
-    function loadUp(){
-   var cityLATLON = {
-      lat: localStorage.getItem("pullLat") ,
-      lon: localStorage.getItem("pullLon"),
-      nameIt: localStorage.getItem("Name"),
-  }
+//     function loadUp(){
+//    var cityLATLON = {
+//       lat: localStorage.getItem("pullLat") ,
+//       lon: localStorage.getItem("pullLon"),
+//       nameIt: localStorage.getItem("Name"),
+//   }
 
   
-  document.getElementById("cityDisplay").textContent = cityLATLON.nameIt;
+//   document.getElementById("cityDisplay").textContent = cityLATLON.nameIt;
 ;}
       
 
