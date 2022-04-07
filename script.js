@@ -122,21 +122,13 @@ windEL.textContent="wind" +  wind
 humidityEL.textContent="humidity:"+  humidity  
 }
 
-    var iconUrl = "https://openweathermap.org/img/w/" + iconL + ".png";
-    var newIMG = document.createElement("img");
-    newIMG.setAttribute("src", iconUrl);
-  
-
-    newIMG.appendChild(iconL);
- 
-    var currentDiv = document.getElementById("iconL");
-    document.body.insertBefore(newIMG, currentDiv);
+   
   
    
   })
 
 }}
-;}
+;
       
 
 
