@@ -38,21 +38,6 @@ fetch(geoURL)
 
 
  localStorage.setItem("nameIt", JSON.stringify(localStorageContent)); 
-// calling the next function
-
-
-
-// let nameIt;
-// if(localStorageContent===null) {
-//   nameIt=[];
-
-// } else {
-//   nameIt =JSON.parse(localStorageContent);
-
-// }
-// nameIt.push("objLATLON.name");
-
-// localStorage.setItem("nameIt", JSON.stringify(nameIt));
 
  getWeatherData();
 }
@@ -160,33 +145,12 @@ forecastCard.append(dateEL, tempEL, windEL, humidityEL);
 forecastDiv.append(forecastCard)
 dateEL.textContent= currentDay
 tempEL.textContent="temp:" + temp  
-windEL.textContent="wind" +  wind  
-humidityEL.textContent="humidity:"+  humidity  
+windEL.textContent="wind" + wind  
+humidityEL.textContent="humidity:"+ humidity  
 }
-
-    // var iconUrl = "http://openweathermap.org/img/w/" + iconL + ".png";
-    // var newIMG = document.createElement("img");
-    // newIMG.setAttribute("src", iconUrl);
-  
-
-    // newIMG.appendChild(iconL);
- 
-    // var currentDiv = document.getElementById("iconL");
-    // document.body.insertBefore(newIMG, currentDiv);
-  
-   
   })
 
 }}
-//     function loadUp(){
-//    var cityLATLON = {
-//       lat: localStorage.getItem("pullLat") ,
-//       lon: localStorage.getItem("pullLon"),
-//       nameIt: localStorage.getItem("Name"),
-//   }
 
-  
-//   document.getElementById("cityDisplay").textContent = cityLATLON.nameIt;
-// ;}
-      
+
 
