@@ -1,0 +1,38 @@
+.nav{
+    background-color: blue;
+    color: antiquewhite;
+}
+
+.texting{
+    color: antiquewhite;
+}
+
+.forFlex{
+    display: flex;
+    flex-direction: row;
+}
+
+.greenUvi{
+background-color: greenyellow;
+
+}
+
+
+.yellowUvi{
+    background-color: yellow;
+    color: antiquewhite;
+    }
+
+
+.redUvi{
+    background-color: red;
+    color: antiquewhite;
+    }
+
+.Fiveday{    background-color: lightblue;
+    border: solid;
+    margin: 10px;
+    padding: 28px;
+}
+
+    
