@@ -14,8 +14,7 @@ function getCity(){
  
   var geoURL = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + "&limit=1&appid=5672fd5fd83f3df76496f1b75a62addb"
   
-  // Here we use our fetch to call the API, and then get the data out of our console. 
-  
+  // Here we use our fetch to call the API, and then get the data out of our console.  
   var objLATLON
 fetch(geoURL)
   .then(response => response.json())
@@ -40,24 +39,8 @@ fetch(geoURL)
  localStorage.setItem("nameIt", JSON.stringify(localStorageContent)); 
 // calling the next function
 
-
-
-// let nameIt;
-// if(localStorageContent===null) {
-//   nameIt=[];
-
-// } else {
-//   nameIt =JSON.parse(localStorageContent);
-
-// }
-// nameIt.push("objLATLON.name");
-
-// localStorage.setItem("nameIt", JSON.stringify(nameIt));
-
  getWeatherData();
 }
-
-  
 
 // This function inputs our LAT/LON into the one call API
 var getWeatherData = function() {
@@ -66,20 +49,9 @@ var getWeatherData = function() {
       lon: localStorage.getItem("pullLon"),
       nameIt: localStorage.getItem("name"),
   }
-
-
-
-
-  // document.getElementById("cityDisplay").textContent = cityLATLON.nameIt;
-  
-  console.log(cityLATLON.lat);
-    
-
+ 
 var weatherAPI = "https://api.openweathermap.org/data/2.5/onecall?lat=" +cityLATLON.lat+ "&lon=" +cityLATLON.lon+ "&exclude=&units=imperial&appid=5672fd5fd83f3df76496f1b75a62addb" 
 
-
-
-// var objWeather
 fetch(weatherAPI)
   .then(function (response){
     return response.json();
@@ -101,30 +73,20 @@ console.log(temp);
 console.log(iconL);
 
 
-
 for( var i=1; i<6 ;i++ ){
 var newDate = moment().add(i, "days").format("MMMM Do YYYY")
 console.log(newDate);}
 
 
-
-
 document.getElementById("cityApp").textContent=cityLATLON.nameIt;
 
-
-
-
-console.log(moment());
-
     document.getElementById("currentDate").textContent = showName + ", " + moment().format("MMMM Do YYYY");
-  
     document.getElementById("temp").textContent = temp;
     document.getElementById("wind").textContent = wind;
     document.getElementById("humidity").textContent = humidity;
     document.getElementById("nameIt").textContent = cityLATLON.nameIt;
 
-
-
+  
     uviColor.textContent = uvi;
 
     if(data.current.uvi<3){
@@ -144,7 +106,6 @@ function Render5day(daily, currentDay){
   var humidity=daily.humidity
   
 
-
   var dateEL=document.createElement("p")
   var tempEL=document.createElement("p")
   var windEL=document.createElement("p")
@@ -163,29 +124,7 @@ tempEL.textContent="temp:" + temp
 windEL.textContent="wind" +  wind  
 humidityEL.textContent="humidity:"+  humidity  
 }
-
-    // var iconUrl = "http://openweathermap.org/img/w/" + iconL + ".png";
-    // var newIMG = document.createElement("img");
-    // newIMG.setAttribute("src", iconUrl);
   
-
-    // newIMG.appendChild(iconL);
- 
-    // var currentDiv = document.getElementById("iconL");
-    // document.body.insertBefore(newIMG, currentDiv);
-  
-   
   })
 
 }}
-//     function loadUp(){
-//    var cityLATLON = {
-//       lat: localStorage.getItem("pullLat") ,
-//       lon: localStorage.getItem("pullLon"),
-//       nameIt: localStorage.getItem("Name"),
-//   }
-
-  
-//   document.getElementById("cityDisplay").textContent = cityLATLON.nameIt;
-// ;}
-      
