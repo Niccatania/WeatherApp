@@ -8,6 +8,8 @@ This projects goal was to use API's to retrieve data and display it. I accomplis
 # Usage
 If you would like to use or edit this code please contact me
 
+# Screenshot
+![Main page](assets/weatherAPP.png)
 
 # Deployed link
 
