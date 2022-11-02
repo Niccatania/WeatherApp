@@ -1,46 +1,48 @@
+*{
+    font-family: 'Playfair Display', serif;
+}
+
 .nav{
-    background-color: blue;
+    background-color: rgb(4, 4, 24);
     color: antiquewhite;
 }
 
-.texting{
-    color: antiquewhite;
-}
-
-.forFlex{
+.five-day{
     display: flex;
-    flex-direction: row;
 }
 
 .greenUvi{
 background-color: greenyellow;
-
 }
 
-
 .yellowUvi{
-    background-color: yellow;
-    color: antiquewhite;
-    }
-
+background-color: yellow;
+color: antiquewhite;
+}
 
 .redUvi{
     background-color: red;
     color: antiquewhite;
     }
 
-.Fiveday{    background-color: lightblue;
+.Fiveday{   
+    background-color:rgb(138, 138, 188);
     border: solid;
     margin: 10px;
     padding: 28px;
 }
+
+
+
+
+
 
 .parallax {
     /* The image used */
     background-image: url("./images/Wweather.jpeg");
   
     /* Set a specific height */
-    min-height: 500px;
+    min-height: 1000px;
   
     /* Create the parallax scrolling effect */
     background-attachment: fixed;

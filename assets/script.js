@@ -83,11 +83,7 @@ var wind = data.current.wind_speed
 var humidity = data.current.humidity
 var uvi = data.current.uvi
 
-var iconL = data.current.weather[0].icon
-console.log(temp);
-console.log(iconL);
-
-
+var iconL = data.current.weather[0].icon;
 
 for( var i=1; i<6 ;i++ ){
 var newDate = moment().add(i, "days").format("MMMM Do YYYY")
@@ -98,13 +94,10 @@ document.getElementById("cityApp").textContent=cityLATLON.nameIt;
 
 
     document.getElementById("currentDate").textContent = showName + ", " + moment().format("MMMM Do YYYY");
-  
     document.getElementById("temp").textContent = temp;
     document.getElementById("wind").textContent = wind;
     document.getElementById("humidity").textContent = humidity;
     document.getElementById("nameIt").textContent = cityLATLON.nameIt;
-
-
 
     uviColor.textContent = uvi;
 
@@ -125,7 +118,7 @@ function Render5day(daily, currentDay){
   var humidity=daily.humidity
   
 
-
+  var headEL=document.createElement("p")
   var dateEL=document.createElement("p")
   var tempEL=document.createElement("p")
   var windEL=document.createElement("p")
@@ -136,9 +129,10 @@ function Render5day(daily, currentDay){
   forecastCard.className = "Fiveday";
   var forecastDiv= document.querySelector("#forecastArea")
  
-forecastCard.append(dateEL, tempEL, windEL, humidityEL);
+forecastCard.append(headEL,dateEL, tempEL, windEL, humidityEL);
 
 forecastDiv.append(forecastCard)
+headEL.textContent="Forecast"
 dateEL.textContent= currentDay
 tempEL.textContent="temp:" + temp  
 windEL.textContent="wind" +  wind  
